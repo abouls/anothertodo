@@ -1,0 +1,15 @@
+{
+  "name": "todobyRedux",
+  "version": "1.0.0",
+  "description": "Redux and immutableJS",
+  "main": "index.js",
+  "author": "hc",
+  "license": "MIT",
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0"
+  }
+}
