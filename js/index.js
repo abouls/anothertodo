@@ -1,7 +1,7 @@
+import  React from  'react'
+import {createStore} from 'redux'
 
-import { createStore } from 'redux'
-// 这一段是redux的测试代码，希望有用
-function counter(state = 0, action) {
+const counter = (state = 0, action) => {
     switch (action.type) {
         case 'INCREMENT':
             return state + 1
@@ -12,18 +12,29 @@ function counter(state = 0, action) {
     }
 }
 
-let store = createStore(counter)
+const Counter = ({
+                     value,
+                     onIncrement,
+                     onDecrement
+                 }) => (
+                     <div><h1>{value}</h1>
+    <button onClick={onIncrement}>+</button>
+    <button onClick={onDecrement}>-</button>
+</div>
+);
 
-store.dispatch({ type: 'INCREMENT' })
-// 1
-store.dispatch({ type: 'INCREMENT' })
-// 2
-store.dispatch({ type: 'DECREMENT' })
+const {createStore} = Redux;
+
+const store = createStore(counter);
 
 
-
-
-
+const render = () => {
+    ReactDOM.render(<Counter
+            value={store.getState()}
+            onIncrement={() => store.dispatch({type: 'INCREMENT'})}
+            onDerement={() => store.dispatch({type: 'DECREMENT'})}/>,
+        document.getElementById('MRcontext'))
+}
 
 
 
