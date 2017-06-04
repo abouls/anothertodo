@@ -1,43 +1,12 @@
-import  React from  'react'
-import {createStore} from 'redux'
+import  TodoList from './TodoList'
 
-const counter = (state = 0, action) => {
-    switch (action.type) {
-        case 'INCREMENT':
-            return state + 1
-        case 'DECREMENT':
-            return state - 1
-        default:
-            return state
-    }
-}
+import ReactDOM  from 'react-dom'
 
-const Counter = ({
-                     value,
-                     onIncrement,
-                     onDecrement
-                 }) => (
-                     <div><h1>{value}</h1>
-    <button onClick={onIncrement}>+</button>
-    <button onClick={onDecrement}>-</button>
-</div>
+import React  from 'react'
+
+
+ReactDOM.render(
+    <TodoList />,
+    document.getElementById('list-content')
 );
-
-const {createStore} = Redux;
-
-const store = createStore(counter);
-
-
-const render = () => {
-    ReactDOM.render(<Counter
-            value={store.getState()}
-            onIncrement={() => store.dispatch({type: 'INCREMENT'})}
-            onDerement={() => store.dispatch({type: 'DECREMENT'})}/>,
-        document.getElementById('MRcontext'))
-}
-
-
-
-
-
 
