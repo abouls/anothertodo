@@ -2,10 +2,9 @@
  * Created by sun on 2017/6/5.
  */
 
-const todo = (state = {}, action) => {
+const todo = (state, action) => {
     switch (action.type) {
         case 'ADD_TODO':
-            console.log(action.id,action.text)
             return {
                 id: action.id,
                 text: action.text,
@@ -15,18 +14,19 @@ const todo = (state = {}, action) => {
             return state
     }
 }
+//赋予初始state一个对象，通过解构对象就被刷掉了。回头自己看解构
+// const initialState={text:"i know this will disappear"}
 
-const initialState={todos:["redux","aha"],input:""}
+const initialState=["lets go"]
 
 const todos = (state=initialState, action) => {
     switch (action.type) {
         case 'ADD_TODO':
-
-            console.log(state)
-            return [
+            return[
                 ...state,
-                todo(undefined, action)
+                todo(todo.text, action)
             ]
+
 
         default:
             return state

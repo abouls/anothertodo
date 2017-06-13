@@ -6,6 +6,7 @@ import Todo from './Todo'
 import { connect } from 'react-redux'
 
 
+
 const TodoList = ({ todos, onTodoClick }) => (
     <ul>
         {
@@ -19,20 +20,16 @@ const TodoList = ({ todos, onTodoClick }) => (
     </ul>
 )
 
-const  getVisibleTodos=(todos)=>{return todos}
+
 
 const mapStateToProps = (state) => {
     return {
-        todos: getVisibleTodos(state.todos)
+        todos:state
     }
 }
 
-const mapDispatchToProps = (state) => {
+const mapDispatchToProps = () => {
     return {
-        onTodoClick: (id) => {
-            // dispatch(toggleTodo(id))
-            console.log(state.todos)
-        }
     }
 }
 
