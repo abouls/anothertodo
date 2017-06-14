@@ -9,4 +9,11 @@ export const addTodo = (text) => {
         text
     }
 }
+let deleid = nextTodoId
+export const deleTodo = (id) => {
+    return {
+        type: 'DELE_TODO',
+        id
+    }
+}
 

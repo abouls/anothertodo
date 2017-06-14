@@ -2,7 +2,7 @@
  * Created by sun on 2017/6/10.
  */
 import React from 'react'
-import Todo from './Todo'
+import Dtodo from './Todo'
 import { connect } from 'react-redux'
 
 
@@ -11,10 +11,9 @@ const TodoList = ({ todos, onTodoClick }) => (
     <ul>
         {
             todos.map(todo =>
-            <Todo
+            <Dtodo
                 key={todo.id}
                 {...todo}
-                onClick={() => onTodoClick(todo.id)}
             />
         )}
     </ul>
